@@ -1,0 +1,526 @@
+/*
+	Comment
+*/
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+.login-page {
+  width: 500px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.login-form h1
+{
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.welcomeMessage
+{
+    text-align: center;
+    color: #8B0000;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 20px;
+
+}
+#title1 span{
+    color:#8B0000;
+}
+
+.register-form h1
+{
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.active a
+{
+    background:#8B0000;
+
+}
+.active li
+{
+    background:#8B0000;
+
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #8B0000;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #f7e7e3;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #000000;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #8B0000;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #f7e7e3;
+}
+
+.copyright2 {
+    text-align: center;
+}
+
+.copyright2 a {
+    color: #8B0000;
+}
+body {
+  background: #ffffff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #ffffff, #ffffff);
+  background: -moz-linear-gradient(right, #ffffff, #ffffff);
+  background: -o-linear-gradient(right, #ffffff, #ffffff);
+  background: linear-gradient(to left, #ffffff, #ffffff);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
+}
+
+/* ===================================
+4. Header
+==================================== */
+
+/* --- header -- */
+
+
+.header-basic-light{
+    padding: 20px 40px;
+    box-sizing:border-box;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.15);
+    height: 80px;
+    background-color: #fff;
+}
+
+.header-basic-light .header-limiter {
+    max-width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Logo */
+
+.header-basic-light .header-limiter h1 {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.6em;
+    color: #656565;
+    float: left;
+    text-align: center;
+    text-transform: uppercase;
+
+
+}
+
+.header-basic-light .header-limiter h1 span {
+    color: #8B0000;
+}
+
+/* The header links */
+
+.header-basic-light .header-limiter a {
+    color: #5c616a;
+    text-decoration: none;
+}
+
+.header-basic-light .header-limiter nav{
+    font:15px Arial, Helvetica, sans-serif;
+    line-height: 40px;
+    float: right;
+}
+
+.header-basic-light .header-limiter nav a{
+    display: inline-block;
+    padding: 0 5px;
+    opacity: 0.9;
+    text-decoration:none;
+    color: #5c616a;
+    line-height:1;
+}
+
+.header-basic-light .header-limiter nav a.selected {
+    background-color: #8B0000;
+    color: #ffffff;
+    border-radius: 3px;
+    padding:6px 10px;
+}
+
+/* Making the header responsive. */
+
+@media all and (max-width: 600px) {
+
+    .header-basic-light {
+        padding: 20px 0;
+        height: 85px;
+    }
+
+    .header-basic-light .header-limiter h1 {
+        float: none;
+        margin: -8px 0 10px;
+        text-align: center;
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    .header-basic-light .header-limiter nav {
+        line-height: 1;
+        float:none;
+    }
+
+    .header-basic-light .header-limiter nav a {
+        font-size: 13px;
+    }
+
+}
+
+/* For the headers to look good, be sure to reset the margin and padding of the body */
+
+body {
+    margin:0;
+    padding:0;
+}
+
+.forgot
+{
+    margin-top:-5px;
+    text-align:right;
+    font-size: 9px;
+    color: #8B0000;
+}
+.forgot a
+{
+    color: #8B0000;
+}
+
+/* Welcome Page Div */
+
+
+.welcome p
+{
+    color: #999;
+    margin: 0 0 1.5em 0;
+    position: relative;
+}
+
+.welcome h2 + p
+{
+    font-size: 1.25em;
+    line-height: 1.5em;
+    margin-top: -1em;
+}
+
+.welcome h3 + p
+{
+    font-size: 1.1em;
+    line-height: 1.5em;
+    margin-top: -0.8em;
+}
+
+.welcome h4 + p,
+.welcome h5 + p,
+.welcome h6 + p
+{
+    font-size: 0.9em;
+    line-height: 1.5em;
+    margin-top: -0.6em;
+}
+
+.welcome.major
+{
+    margin: 0 0 1em 0;
+}
+
+.welcome.major:after
+{
+    background: rgba(144, 144, 144, 0.5);
+    content: '';
+    display: inline-block;
+    height: 1px;
+    margin-top: 1.5em;
+    width: 6em;
+}
+
+.welcome.major h2, .welcome.major h3, .welcome.major h4, .welcome.major h5, .welcome.major h6
+{
+    margin: 0;
+}
+
+.welcome.major p
+{
+    margin: 0.7em 0 0 0;
+}
+
+.welcome.special
+{
+    text-align: center;
+}
+
+#welcome {
+    padding: 9em 0 9em 0 ;
+    background-color: #8c8c8c ;
+    color: rgba(255, 255, 255, 0.75);
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+#welcome a {
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+#welcome a:hover {
+    color: #ffffff;
+}
+
+#welcome h1, #welcome h2, #welcome h3, #welcome h4, #welcome h5, #welcome h6, #welcome strong, #welcome b {
+    color: #ffffff;
+}
+
+#welcome welcome p {
+    color: #ffffff;
+}
+
+#welcome welcome.major:after {
+    background: #ffffff;
+}
+
+#welcome input[type="submit"],
+#welcome input[type="reset"],
+#welcome input[type="button"],
+#welcome button,
+#welcome .button {
+    box-shadow: inset 0 0 0 1px #ffffff;
+    color: #ffffff !important;
+}
+
+#welcome input[type="submit"]:hover,
+#welcome input[type="reset"]:hover,
+#welcome input[type="button"]:hover,
+#welcome button:hover,
+#welcome .button:hover {
+    background-color: rgba(255, 255, 255, 0.125);
+}
+
+#welcome input[type="submit"]:active,
+#welcome input[type="reset"]:active,
+#welcome input[type="button"]:active,
+#welcome button:active,
+#welcome .button:active {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+#welcome input[type="submit"].special,
+#welcome input[type="reset"].special,
+#welcome input[type="button"].special,
+#welcome button.special,
+#welcome .button.special {
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 1px #ffffff !important;
+    color: #380000  !important;
+}
+
+#welcome input[type="submit"].special:hover,
+#welcome input[type="reset"].special:hover,
+#welcome input[type="button"].special:hover,
+#welcome button.special:hover,
+#welcome .button.special:hover {
+    background-color: rgba(255, 255, 255, 0.125) !important;
+    color: #ffffff !important;
+}
+
+#welcome input[type="submit"].special:active,
+#welcome input[type="reset"].special:active,
+#welcome input[type="button"].special:active,
+#welcome button.special:active,
+#welcome .button.special:active {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+#welcome ul.major-icons li .icon {
+    border-color: #ffffff;
+}
+
+#welcome .icon.major {
+    color: #ffffff;
+}
+
+#welcome h1 {
+    margin: 0;
+}
+
+#welcome p {
+    margin: 1em 0 0 0;
+}
+
+#welcome .actions {
+    margin: 2.5em 0 0 0;
+    position: relative;
+}
+
+#welcome .actions:after {
+    background: #ffffff;
+    content: '';
+    height: 100vh;
+    left: 50%;
+    position: absolute;
+    top: 100%;
+    width: 1px;
+}
+
+#welcome .inner {
+    -moz-transition: -moz-transform 1.5s ease, opacity 2s ease;
+    -webkit-transition: -webkit-transform 1.5s ease, opacity 2s ease;
+    -ms-transition: -ms-transform 1.5s ease, opacity 2s ease;
+    transition: transform 1.5s ease, opacity 2s ease;
+    -moz-transition-delay: 0.25s;
+    -webkit-transition-delay: 0.25s;
+    -ms-transition-delay: 0.25s;
+    transition-delay: 0.25s;
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    position: relative;
+    z-index: 1;
+}
+
+#welcome .inner .actions {
+    -moz-transition: -moz-transform 1.25s ease;
+    -webkit-transition: -webkit-transform 1.25s ease;
+    -ms-transition: -ms-transform 1.25s ease;
+    transition: transform 1.25s ease;
+    -moz-transition-delay: 1s;
+    -webkit-transition-delay: 1s;
+    -ms-transition-delay: 1s;
+    transition-delay: 1s;
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#welcome:after {
+    -moz-transition: opacity 1s ease;
+    -webkit-transition: opacity 1s ease;
+    -ms-transition: opacity 1s ease;
+    transition: opacity 1s ease;
+    background-image: linear-gradient(45deg,#380000 , #380000 );
+    content: '';
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 50%;
+}
+
+body.is-loading #welcome .inner {
+    -moz-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+    opacity: 0;
+}
+
+body.is-loading #welcome .inner .actions {
+    -moz-transform: translateY(30em);
+    -webkit-transform: translateY(30em);
+    -ms-transform: translateY(30em);
+    transform: translateY(30em);
+    opacity: 0;
+}
+
+body.is-loading #welcome:after {
+    opacity: 1;
+}
+
+a:hover
+{
+    border-bottom-color: transparent !important;
+    color: #6bd4c8;
+}
+#welcome a {
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
