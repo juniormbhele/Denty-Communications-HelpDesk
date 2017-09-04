@@ -2,6 +2,7 @@
   <dictionary name="Sphiwe.Mbhele">
     <words>
       <w>jdbc</w>
+      <w>loginname</w>
     </words>
   </dictionary>
 </component>

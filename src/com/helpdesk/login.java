@@ -38,8 +38,11 @@ public class login extends HttpServlet
             {
                 if(CurrentUsername.equals(username))
                 {
-                    request.setAttribute("userMessage", username);
+
+                    home.displayIssues(username,request,response);
+
                     request.getRequestDispatcher("/home.jsp").forward(request, response);
+
 
                     System.out.println(CurrentUsername+""+username);
                 }
@@ -74,7 +77,7 @@ public class login extends HttpServlet
 
             if (con != null)
             {
-                PreparedStatement ps = con.prepareStatement("select loginname from SYSTEM.CUSTOMERS where LOGINNAME like ? AND PASSWORD like ?");
+                PreparedStatement ps = con.prepareStatement("select * from SYSTEM.CUSTOMERS where LOGINNAME like ? AND PASSWORD like ?");
                 ps.setString(1, username);
                 ps.setString(2, password);
                 ResultSet rs = ps.executeQuery();

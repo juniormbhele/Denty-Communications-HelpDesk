@@ -62,10 +62,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.2 - Bean Validation" level="application_server_libraries" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.2 - RESTful Web Service" level="application_server_libraries" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.2 - JSF" level="application_server_libraries" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.2 - WebSocket" level="application_server_libraries" />
     <orderEntry type="library" name="jquery" level="application" />
     <orderEntry type="library" name="jquery-1.11.0" level="application" />
     <orderEntry type="library" name="jquery-ui" level="application" />
@@ -88,5 +84,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="yui" level="application" />
+    <orderEntry type="library" name="ojdbc14-10.2.0.2" level="project" />
   </component>
 </module>

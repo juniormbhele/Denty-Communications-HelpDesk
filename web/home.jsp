@@ -12,17 +12,18 @@
 
     <!-- css -->
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
-    <link href="CSS/style.css" rel="stylesheet" />
-    <link href="CSS/bootstrap.min.css" rel="stylesheet" />
-    <link href="CSS/fancybox/jquery.fancybox.css" rel="stylesheet">
-    <link href="CSS/jcarousel.css" rel="stylesheet" />
-    <link href="CSS/flexslider.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
+    <link href="css/jscarousel.css" rel="stylesheet" />
+    <link href="css/flexslider.css" rel="stylesheet" />
     <script language="JavaScript" type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="JS/switch.js"></script>
+    <script src="js/switch.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="CSS/layouts/email.css">
+    <link rel="stylesheet" href="css/layouts/email.css">
 
 </head>
 <body>
@@ -59,9 +60,46 @@
     </div>
 </section>
 
+
 <!-- Email like response -->
 
 
+<div id="layout" class="content pure-g">
+
+    <div id="main" class="pure-u-1">
+        <div class="email-content">
+            <div class="email-content-header pure-g">
+                <div class="pure-u-1-2">
+                    <h1 class="email-content-title">${title}</h1>
+                    <h1 class="email-content-title"></h1>
+                    <p class="email-content-subtitle">
+                        From <a>${customer}</a> at <span>${date}</span>
+                    </p>
+                </div>
+
+
+            </div>
+
+            <div class="email-content-body">
+                <p>
+                    Good day
+                </p>
+                <p>
+                    ${desc}
+                </p>
+
+                <p>
+                    Your ticket is status is ${status}
+                </p>
+
+                    <a href="#" class="btn btn-primary btn-danger"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Reply -->
 
 
 
@@ -71,17 +109,13 @@
         <div class="email-content">
             <div class="email-content-header pure-g">
                 <div class="pure-u-1-2">
-                    <h1 class="email-content-title">Hello from Midrand  </h1>
+                    <h1 class="email-content-title">${Replytitle}</h1>
+                    <h1 class="email-content-title"></h1>
                     <p class="email-content-subtitle">
-                        From <a>Junior Denty</a> at <span>3:56pm, April 3, 2017</span>
+                        From <a>${PostedBy}</a> at <span>${Rplydate}</span>
                     </p>
                 </div>
 
-                <div class="email-content-controls pure-u-1-2">
-                    <button class="secondary-button pure-button">Reply</button>
-                    <button class="secondary-button pure-button">Forward</button>
-                    <button class="secondary-button pure-button">Move to</button>
-                </div>
             </div>
 
             <div class="email-content-body">
@@ -89,23 +123,23 @@
                     Good day
                 </p>
                 <p>
-                    I hope this email finds you in a good mood, Will you please help me out with my PC?
+                    ${Replydesc}
                 </p>
                 <p>
-                   My number is 079 236 0784
+                    
                 </p>
                 <p>
-                   I'm hoping to hear from you soon.
+
                 </p>
+
+                    <a href="#" class="btn btn-primary btn-danger"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
+
                 <p>
-                    Regards,<br>
-                    Junior
                 </p>
             </div>
         </div>
     </div>
 </div>
-
 
 
 

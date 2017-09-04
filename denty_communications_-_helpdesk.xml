@@ -87,6 +87,12 @@
       <include name="jre/lib/ext/sunmscapi.jar"/>
       <include name="jre/lib/ext/sunpkcs11.jar"/>
       <include name="jre/lib/ext/zipfs.jar"/>
+      <include name="../../../Users/sphiwe.mbhele/IdeaProjects/Denty Communications - HelpDesk/.idea/libraries/ojdbc14.jar"/>
+      <include name="../../../Selenium/jars/testng-6.0.jar"/>
+      <include name="../../../Selenium/jars/poi-3.9.jar"/>
+      <include name="../../../Selenium/jars/poi-ooxml-3.11.jar"/>
+      <include name="../../../Selenium/jars/selenium-server-standalone-3.4.0.jar"/>
+      <include name="../../../Selenium/jars/bsh-2.1b5.jar"/>
     </fileset>
   </path>
   
@@ -95,12 +101,34 @@
   <property name="project.jdk.classpath" value="jdk.classpath.1.8"/>
   
   
+  <!-- Project Libraries -->
+  
+  
+  <!-- Global Libraries -->
+  
+  <path id="library.jquery-1.11.0.classpath">
+    <pathelement location="C:/Users/sphiwe.mbhele/.IntelliJIdea14/system/extLibs/http_code.jquery.com_jquery-1.11.0.js"/>
+  </path>
+  
+  <path id="library.jquery-ui.classpath">
+    <pathelement location="C:/Users/sphiwe.mbhele/.IntelliJIdea14/system/extLibs/__ajax.googleapis.com_ajax_libs_jqueryui_1.10.0_jquery-ui.js"/>
+  </path>
+  
+  <path id="library.jquery.classpath">
+    <pathelement location="C:/Users/sphiwe.mbhele/.IntelliJIdea14/system/extLibs/__ajax.googleapis.com_ajax_libs_jquery_2.0.0_jquery.js"/>
+  </path>
+  
+  <path id="library.yui.classpath">
+    <pathelement location="C:/Users/sphiwe.mbhele/.IntelliJIdea14/system/extLibs/http_yui-s.yahooapis.com_3.18.1_build_yui_yui.js"/>
+  </path>
+  
+  
   <!-- Application Server Libraries -->
   
   <path id="library.glassfish_4.1.2.classpath">
-    <pathelement location="C:/Settings/glassfish4/glassfish/modules/javax.ejb-api.jar"/>
-    <pathelement location="C:/Settings/glassfish4/glassfish/modules/javax.servlet-api.jar"/>
-    <pathelement location="C:/Settings/glassfish4/glassfish/modules/javax.servlet.jsp-api.jar"/>
+    <pathelement location="C:/Users/sphiwe.mbhele/Downloads/latest-glassfish/glassfish5/glassfish/modules/javax.ejb-api.jar"/>
+    <pathelement location="C:/Users/sphiwe.mbhele/Downloads/latest-glassfish/glassfish5/glassfish/modules/javax.servlet-api.jar"/>
+    <pathelement location="C:/Users/sphiwe.mbhele/Downloads/latest-glassfish/glassfish5/glassfish/modules/javax.servlet.jsp-api.jar"/>
   </path>
   <!-- Register Custom Compiler Taskdefs -->
   <property name="javac2.home" value="${idea.home}/lib"/>
@@ -149,6 +177,11 @@
     <copy todir="${artifact.output.denty_communications_-_helpdesk:war_exploded}/WEB-INF/classes">
       <fileset dir="${denty_communications_-_helpdesk.output.dir}"/>
     </copy>
+    <mkdir dir="${artifact.output.denty_communications_-_helpdesk:war_exploded}/WEB-INF/lib"/>
+    <copy file="${basedir}/../../../../Selenium/jars/ojdbc7-12.1.0.2.jar" tofile="${artifact.output.denty_communications_-_helpdesk:war_exploded}/WEB-INF/lib/ojdbc7-12.1.0.2.jar"/>
+    <copy file="${idea.home}/plugins/testng/lib/testng.jar" tofile="${artifact.output.denty_communications_-_helpdesk:war_exploded}/WEB-INF/lib/testng.jar"/>
+    <copy file="${idea.home}/lib/groovy-all-2.2.1.jar" tofile="${artifact.output.denty_communications_-_helpdesk:war_exploded}/WEB-INF/lib/groovy-all-2.2.1.jar"/>
+    <copy file="${basedir}/.idea/libraries/ojdbc14.jar" tofile="${artifact.output.denty_communications_-_helpdesk:war_exploded}/WEB-INF/lib/ojdbc14.jar"/>
   </target>
   
   <target name="build.all.artifacts" depends="artifact.denty_communications_-_helpdesk:war_exploded" description="Build all artifacts">

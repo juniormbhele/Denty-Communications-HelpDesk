@@ -20,12 +20,24 @@
     <path refid="library.glassfish_4.1.2.classpath"/>
     <pathelement location="${idea.home}/lib/groovy-all-2.2.1.jar"/>
     <pathelement location="${idea.home}/plugins/testng/lib/testng.jar"/>
+    <path refid="library.jquery.classpath"/>
+    <path refid="library.jquery-1.11.0.classpath"/>
+    <path refid="library.jquery-ui.classpath"/>
+    <pathelement location="${basedir}/../../../../Selenium/jars/ojdbc7-12.1.0.2.jar"/>
+    <pathelement location="${basedir}/.idea/libraries/ojdbc14.jar"/>
+    <path refid="library.yui.classpath"/>
   </path>
   
   <path id="denty_communications_-_helpdesk.runtime.production.module.classpath">
     <pathelement location="${denty_communications_-_helpdesk.output.dir}"/>
     <pathelement location="${idea.home}/lib/groovy-all-2.2.1.jar"/>
     <pathelement location="${idea.home}/plugins/testng/lib/testng.jar"/>
+    <path refid="library.jquery.classpath"/>
+    <path refid="library.jquery-1.11.0.classpath"/>
+    <path refid="library.jquery-ui.classpath"/>
+    <pathelement location="${basedir}/../../../../Selenium/jars/ojdbc7-12.1.0.2.jar"/>
+    <pathelement location="${basedir}/.idea/libraries/ojdbc14.jar"/>
+    <path refid="library.yui.classpath"/>
   </path>
   
   <path id="denty_communications_-_helpdesk.module.classpath">
@@ -34,6 +46,12 @@
     <path refid="library.glassfish_4.1.2.classpath"/>
     <pathelement location="${idea.home}/lib/groovy-all-2.2.1.jar"/>
     <pathelement location="${idea.home}/plugins/testng/lib/testng.jar"/>
+    <path refid="library.jquery.classpath"/>
+    <path refid="library.jquery-1.11.0.classpath"/>
+    <path refid="library.jquery-ui.classpath"/>
+    <pathelement location="${basedir}/../../../../Selenium/jars/ojdbc7-12.1.0.2.jar"/>
+    <pathelement location="${basedir}/.idea/libraries/ojdbc14.jar"/>
+    <path refid="library.yui.classpath"/>
   </path>
   
   <path id="denty_communications_-_helpdesk.runtime.module.classpath">
@@ -42,11 +60,84 @@
     <path refid="library.glassfish_4.1.2.classpath"/>
     <pathelement location="${idea.home}/lib/groovy-all-2.2.1.jar"/>
     <pathelement location="${idea.home}/plugins/testng/lib/testng.jar"/>
+    <path refid="library.jquery.classpath"/>
+    <path refid="library.jquery-1.11.0.classpath"/>
+    <path refid="library.jquery-ui.classpath"/>
+    <pathelement location="${basedir}/../../../../Selenium/jars/ojdbc7-12.1.0.2.jar"/>
+    <pathelement location="${basedir}/.idea/libraries/ojdbc14.jar"/>
+    <path refid="library.yui.classpath"/>
   </path>
   
   
   <patternset id="excluded.from.module.denty_communications_-_helpdesk">
     <patternset refid="ignored.files"/>
+    <exclude name="out/**"/>
+    <exclude name="out/artifacts/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/JS/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/CSS/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/CSS/layouts/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/CSS/fancybox/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/js/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/js/ie/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/css/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/css/images/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/sass/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/sass/libs/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/fonts/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/lib/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/com/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/com/helpdesk/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/JS/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/CSS/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/CSS/layouts/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/CSS/fancybox/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/js/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/js/ie/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/css/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/css/images/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/sass/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/sass/libs/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/fonts/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/WEB-INF/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/.idea/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/.idea/scopes/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/.idea/artifacts/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/.idea/copyright/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/.idea/libraries/**"/>
+    <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/.idea/dictionaries/**"/>
+    <exclude name="out/production/**"/>
+    <exclude name="out/production/Denty Communications - HelpDesk/**"/>
+    <exclude name="out/production/Denty Communications - HelpDesk/com/**"/>
+    <exclude name="out/production/Denty Communications - HelpDesk/com/helpdesk/**"/>
+    <exclude name="out/production/Denty Communications - HelpDesk/web/**"/>
+    <exclude name="out/production/Denty Communications - HelpDesk/web/JS/**"/>
+    <exclude name="out/production/Denty Communications - HelpDesk/web/CSS/**"/>
+    <exclude name="out/production/Denty Communications - HelpDesk/web/CSS/layouts/**"/>
+    <exclude name="out/production/Denty Communications - HelpDesk/web/assets/**"/>
+    <exclude name="out/production/Denty Communications - HelpDesk/web/assets/js/**"/>
+    <exclude name="out/production/Denty Communications - HelpDesk/web/assets/js/ie/**"/>
+    <exclude name="out/production/Denty Communications - HelpDesk/web/assets/css/**"/>
+    <exclude name="out/production/Denty Communications - HelpDesk/web/assets/css/images/**"/>
+    <exclude name="out/production/Denty Communications - HelpDesk/web/assets/sass/**"/>
+    <exclude name="out/production/Denty Communications - HelpDesk/web/assets/sass/libs/**"/>
+    <exclude name="out/production/Denty Communications - HelpDesk/web/assets/fonts/**"/>
+    <exclude name="out/production/Denty Communications - HelpDesk/web/WEB-INF/**"/>
+    <exclude name="out/production/Denty Communications - HelpDesk/.idea/**"/>
+    <exclude name="out/production/Denty Communications - HelpDesk/.idea/scopes/**"/>
+    <exclude name="out/production/Denty Communications - HelpDesk/.idea/artifacts/**"/>
+    <exclude name="out/production/Denty Communications - HelpDesk/.idea/copyright/**"/>
+    <exclude name="out/production/Denty Communications - HelpDesk/.idea/libraries/**"/>
+    <exclude name="out/production/Denty Communications - HelpDesk/.idea/dictionaries/**"/>
   </patternset>
   
   <patternset id="excluded.from.compilation.denty_communications_-_helpdesk">
@@ -54,8 +145,9 @@
   </patternset>
   
   <path id="denty_communications_-_helpdesk.module.sourcepath">
-    <dirset dir="${module.denty_communications_-_helpdesk.basedir}">
-      <include name="src"/>
+    <dirset dir="${module.denty_communications_-_helpdesk.basedir}/../../IdeaProjects">
+      <include name="Denty Communications - HelpDesk/src"/>
+      <include name="Denty Communications - HelpDesk"/>
     </dirset>
   </path>
   
@@ -74,6 +166,10 @@
     
     <copy todir="${denty_communications_-_helpdesk.output.dir}">
       <fileset dir="${module.denty_communications_-_helpdesk.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.denty_communications_-_helpdesk.basedir}">
         <patternset refid="compiler.resources"/>
         <type type="file"/>
       </fileset>
