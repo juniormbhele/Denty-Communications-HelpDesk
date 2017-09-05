@@ -17,6 +17,8 @@ import java.sql.ResultSet;
 //@WebServlet(name="login", urlPatterns={"/login"} )
 public class login extends HttpServlet
 {
+    public static String username;
+    public static String password;
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -25,8 +27,8 @@ public class login extends HttpServlet
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
+         username = request.getParameter("username");
+         password = request.getParameter("password");
 
        String CurrentUsername = Userlogin(username, password);
 
@@ -39,9 +41,10 @@ public class login extends HttpServlet
                 if(CurrentUsername.equals(username))
                 {
 
+
                     home.displayIssues(username,request,response);
 
-                    request.getRequestDispatcher("/home.jsp").forward(request, response);
+                    request.getRequestDispatcher("/tickets.jsp").forward(request, response);
 
 
                     System.out.println(CurrentUsername+""+username);

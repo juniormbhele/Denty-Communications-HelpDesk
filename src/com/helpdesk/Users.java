@@ -1,5 +1,6 @@
 package com.helpdesk;
 
+import javax.servlet.http.HttpServlet;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,7 +10,7 @@ import java.text.SimpleDateFormat;
 /**
  * Created by Sphiwe.Mbhele on 2017/08/18.
  */
-public class Users
+public class Users extends HttpServlet
 {
     int CustomerID = 0;
     String username = null;
@@ -17,6 +18,7 @@ public class Users
     DateFormat creationDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     String email = null;
     String serialNumber = null;
+
 
 
     public void setCustomerID(int customerID) {
@@ -110,4 +112,7 @@ public class Users
         }
 
     }
+
+
+
 }

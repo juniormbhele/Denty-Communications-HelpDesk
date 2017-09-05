@@ -40,6 +40,39 @@
         <url-pattern>/signUp</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>tickets</servlet-name>
+        <servlet-class>com.helpdesk.tickets</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>tickets</servlet-name>
+        <url-pattern>/tickets</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Users</servlet-name>
+        <servlet-class>com.helpdesk.Users</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>Users</servlet-name>
+        <url-pattern>/Users</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>displayUsers</servlet-name>
+        <servlet-class>com.helpdesk.displayUsers</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>displayUsers</servlet-name>
+        <url-pattern>/displayUsers</url-pattern>
+    </servlet-mapping>
+
 
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
