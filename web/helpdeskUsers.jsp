@@ -65,7 +65,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="userProfile.jsp">
+                    <a href="${pageContext.request.contextPath}/Users">
                         <i class="pe-7s-user"></i>
                         <p>User Profile</p>
                     </a>
@@ -77,7 +77,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="tickets.jsp">
+                    <a href="${pageContext.request.contextPath}/tickets">
                         <i class="fa fa-ticket"></i>
                         <p>Tickets</p>
                     </a>
@@ -166,11 +166,18 @@
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover">
                                     <thead>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Registration Date</th>
+                                    <th>USERNAME</th>
+                                    <th>FIRST NAME</th>
+                                    <th>LAST NAME</th>
                                     <th>Email</th>
-                                    <th>Serial Number</th>
+                                    <th>COMPANY</th>
+                                    <th>ADDRESS</th>
+                                    <th>CITY</th>
+                                    <th>COUNTRY</th>
+                                    <th>PORTAL CODE</th>
+                                    <th>ABOUT</th>
+                                    <th>ROLE</th>
+                                    <th>REGISTRATION DATE</th>
                                     </thead>
                                     <tbody>
                                     <c:forEach var="users" items="${usersList}">
@@ -180,6 +187,13 @@
                                             <td>${users[2]}</td>
                                             <td>${users[3]}</td>
                                             <td>${users[4]}</td>
+                                            <td>${users[5]}</td>
+                                            <td>${users[6]}</td>
+                                            <td>${users[7]}</td>
+                                            <td>${users[8]}</td>
+                                            <td>${users[9]}</td>
+                                            <td>${users[10]}</td>
+                                            <td>${users[11]}</td>
                                             <td class="td-actions text-right">
                                                 <button type="button" rel="tooltip" title="Edit User" class="btn btn-info btn-simple btn-xs">
                                                     <i class="fa fa-edit"></i>

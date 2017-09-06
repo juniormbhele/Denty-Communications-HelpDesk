@@ -33,7 +33,7 @@ public class signUp extends HttpServlet
         String email = request.getParameter("username");
         String serialNumber = request.getParameter("password");
 
-        Users.register(username,password,email,serialNumber);
+        //Users.register(username,password,email,serialNumber);
 
         request.setAttribute("errorMessage", "User successfully added");
         request.getRequestDispatcher("/index.jsp").forward(request, response);

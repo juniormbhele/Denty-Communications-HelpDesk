@@ -84,6 +84,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="yui" level="application" />
-    <orderEntry type="library" name="ojdbc14-10.2.0.2" level="project" />
+    <orderEntry type="library" exported="" name="ojdbc14-10.2.0.2" level="project" />
   </component>
 </module>

@@ -64,7 +64,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="userProfile.jsp">
+                    <a href="${pageContext.request.contextPath}/Users">
                         <i class="pe-7s-user"></i>
                         <p>User Profile</p>
                     </a>

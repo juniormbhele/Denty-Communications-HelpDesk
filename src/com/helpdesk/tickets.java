@@ -32,13 +32,14 @@ public class tickets extends HttpServlet
     public static void displayIssues(String username, HttpServletRequest request,
                                      HttpServletResponse response) throws ServletException, IOException {
 
-        String title = null;
-        String description = null;
+        String TICKETSTITLE = null;
+        String TICKETSDESCRIPTION = null;
         String postDate = null;
         String status = null;
         String resolvedDate = null;
         String supportPerson = null;
-        String issuesID = null;
+        String TICKETSID = null;
+        String ASSIGNEDTO = null;
 
 
         String loginID = null;
@@ -47,29 +48,32 @@ public class tickets extends HttpServlet
 
             if (con != null)
             {
-                PreparedStatement ps = con.prepareStatement("SELECT * FROM SYSTEM.CUSTOMERS C INNER JOIN SYSTEM.ISSUES I on C.CUSTOMERID = I.CUSTOMERID WHERE C.LOGINNAME=?" );
+                PreparedStatement ps = con.prepareStatement("SELECT * FROM SYSTEM.USERS C INNER JOIN SYSTEM.TICKETS I on C.USERNAME = I.USERNAME WHERE C.USERNAME=?" );
                 ps.setString(1, username);
                 ResultSet rs = ps.executeQuery();
 
                 if (rs.next())
                 {
-                    description = rs.getString("ISSUEDESCRIPTION");
-                    title = rs.getString("ISSUETITLE");
+                    TICKETSDESCRIPTION = rs.getString("TICKETSDESCRIPTION");
+                    TICKETSTITLE = rs.getString("TICKETSTITLE");
                     postDate = rs.getString("POSTEDON");
                     status = rs.getString("STATUS");
                     resolvedDate = rs.getString("RESOLVEDON");
+                    ASSIGNEDTO = rs.getString("ASSIGNEDTO");
 
 
                     request.setAttribute("userMessage", username);
-                    request.setAttribute("title", title);
+                    request.setAttribute("title", TICKETSTITLE);
                     request.setAttribute("customer", username);
                     request.setAttribute("date", postDate);
-                    request.setAttribute("desc", description);
+                    request.setAttribute("desc", TICKETSDESCRIPTION);
                     request.setAttribute("status", status);
+                    request.setAttribute("ASSIGNEDTO", ASSIGNEDTO);
 
-                    issuesID =rs.getString("ISSUEID");
 
-                    home.displayReplies(issuesID, request, response);
+                    TICKETSID =rs.getString("TICKETSID");
+
+                    displayReplies(TICKETSID, request, response);
 
                 } else
                 {
@@ -93,11 +97,11 @@ public class tickets extends HttpServlet
         }
     }
 
-    public static void displayReplies(String issuesID, HttpServletRequest request,
+    public static void displayReplies(String TRID, HttpServletRequest request,
                                       HttpServletResponse response) throws ServletException, IOException {
 
-        String IRTITLE = null;
-        String IRDESCRIPTION = null;
+        String TRTITLE = null;
+        String TRDESCRIPTION = null;
         String POSTEDON = null;
         String POSTEDBY = null;
         try {
@@ -105,20 +109,20 @@ public class tickets extends HttpServlet
 
             if (con != null)
             {
-                PreparedStatement ps = con.prepareStatement("SELECT * FROM SYSTEM.ISSUERESPONSES WHERE ISSUEID LIKE ?" );
-                ps.setString(1, issuesID);
+                PreparedStatement ps = con.prepareStatement("SELECT * FROM SYSTEM.TICKETSRESPONSES WHERE TRID LIKE ?" );
+                ps.setString(1, TRID);
                 ResultSet rs = ps.executeQuery();
 
                 if (rs.next())
                 {
-                    IRTITLE = rs.getString("IRTITLE");
-                    IRDESCRIPTION = rs.getString("IRDESCRIPTION");
+                    TRTITLE = rs.getString("TRTITLE");
+                    TRDESCRIPTION = rs.getString("TRDESCRIPTION");
                     POSTEDON = rs.getString("POSTEDON");
                     POSTEDBY = rs.getString("POSTEDBY");
 
 
-                    request.setAttribute("Replytitle", IRTITLE);
-                    request.setAttribute("Replydesc", IRDESCRIPTION);
+                    request.setAttribute("Replytitle", TRTITLE);
+                    request.setAttribute("Replydesc", TRDESCRIPTION);
                     request.setAttribute("Rplydate", POSTEDON);
                     request.setAttribute("PostedBy", POSTEDBY);
 

@@ -1,103 +1,98 @@
 package com.helpdesk;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 
 /**
  * Created by Sphiwe.Mbhele on 2017/08/18.
  */
 public class Users extends HttpServlet
 {
-    int CustomerID = 0;
-    String username = null;
-    String password = null;
-    DateFormat creationDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-    String email = null;
-    String serialNumber = null;
+    static String username= null;
+        String password= null;
+    static String company= null;
+    static String firstName= null;
+    static String lastName= null;
+        static String email= null;
+    static String address= null;
+    static String city= null;
+    static String country= null;
+    static String portalCode= null;
+    static String About= null;
+    static String reg_date= null;
 
-
-
-    public void setCustomerID(int customerID) {
-        CustomerID = customerID;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setCreationDate(DateFormat creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setSerialNumber(String serialNumber) {
-        this.serialNumber = serialNumber;
-    }
-
-
-    public  int getCustomerID()
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException
     {
-        return CustomerID;
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+
+        userProfile(login.username,request,response);
+        request.getRequestDispatcher("/userProfile.jsp").forward(request, response);
+
     }
 
-    public  String getPassword() {
-        return password;
-    }
 
-    public  String getUsername() {
-        return username;
-    }
 
-    public  DateFormat getCreationDate() {
-        return creationDate;
-    }
 
-    public  String getEmail() {
-        return email;
-    }
 
-    public  String getSerialNumber() {
-        return serialNumber;
-    }
-
-    public Users()
+    public static void userProfile(String USERN, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        super();
-    }
-
-
-    public static void register(String username,String password, String email,String serialNumber )
-    {
-        int x = 0;
         try {
             Connection con = Database.getConnection();
 
             if (con != null)
             {
-                PreparedStatement ps = con.prepareStatement("INSERT INTO CUSTOMERS (LOGINNAME, PASSWORD, EMAIL, SERIALNO) VALUES (?, ?, ?,?)");
-                ps.setString(1, username);
-                ps.setString(2, password);
-                ps.setString(3, email);
-                ps.setString(4, serialNumber);
-
+                PreparedStatement ps = con.prepareStatement("SELECT * FROM SYSTEM.USERS WHERE USERNAME=?" );
+                ps.setString(1, USERN);
                 ResultSet rs = ps.executeQuery();
-                x++;
-                if (x > 0)
+
+
+                if (rs.next())
                 {
-                    System.out.println("Data Saved Successfully");
+
+                    username= rs.getString("USERNAME");
+                    firstName= rs.getString("FIRSTNAME");
+                    lastName=  rs.getString("LASTNAME");
+                    email=  rs.getString("EMAIL");
+                    company=   rs.getString("COMPANY");
+                    address=   rs.getString("ADDRESS");
+                    city=   rs.getString("CITY");
+                    country= rs.getString("COUNTRY");
+                    portalCode=  rs.getString("PORTALCODE");
+                    About= rs.getString("ABOUT");
+                    reg_date=   rs.getString("REG_DATE");
+
+
+                    request.setAttribute("userMessage", username);
+                    request.setAttribute("USERNAME", username);
+                    request.setAttribute("FIRSTNAME", firstName);
+                    request.setAttribute("LASTNAME", lastName);
+                    request.setAttribute("EMAIL", email);
+                    request.setAttribute("COMPANY", company);
+                    request.setAttribute("ADDRESS", address);
+                    request.setAttribute("CITY", city);
+                    request.setAttribute("COUNTRY", country);
+                    request.setAttribute("PORTALCODE", portalCode);
+                    request.setAttribute("ABOUT", About);
+
+
+
+                }
+                else
+                {
+                    System.out.println("Results set is empty");
                 }
 
+                rs.close();
                 con.close();
 
 
@@ -106,13 +101,14 @@ public class Users extends HttpServlet
             }
 
 
-        } catch (Exception ex)
+        }
+        catch (Exception ex)
         {
-            System.out.println(ex.getStackTrace());
+            System.out.println(ex);
+
         }
 
     }
-
 
 
 }

@@ -25,7 +25,7 @@ public class codeTester
 
             if (con != null)
             {
-                PreparedStatement ps = con.prepareStatement("SELECT * FROM SYSTEM.CUSTOMERS" );
+                PreparedStatement ps = con.prepareStatement("SELECT * FROM SYSTEM.USERS" );
                 ResultSet rs = ps.executeQuery();
 
 

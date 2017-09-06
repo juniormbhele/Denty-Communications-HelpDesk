@@ -64,7 +64,7 @@
                     </a>
                 </li>
                 <li class="active">
-                    <a href="userProfile.jsp">
+                    <a href="${pageContext.request.contextPath}/Users">
                         <i class="pe-7s-user"></i>
                         <p>User Profile</p>
                     </a>
@@ -142,6 +142,11 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li>
+                            <a href="userProfile.jsp">
+                                ${userMessage}
+                            </a>
+                        </li>
+                        <li>
                             <a href="index.jsp">
                                 <p>Log out</p>
                             </a>
@@ -175,14 +180,14 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label>Username</label>
-                                                <input type="text" class="form-control" disabled placeholder="Username" value="michael23">
+                                                <label>Username (disabled)</label>
+                                                <input type="text" class="form-control" disabled placeholder="Username" value="${USERNAME}">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Email address</label>
-                                                <input type="email" class="form-control"  placeholder="Email">
+                                                <input type="email" class="form-control"  placeholder="${EMAIL}">
                                             </div>
                                         </div>
                                     </div>
@@ -191,13 +196,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>First Name</label>
-                                                <input type="text" class="form-control" placeholder="Company" value="Mike">
+                                                <input type="text" class="form-control" placeholder="Company" value="${FIRSTNAME}">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Last Name</label>
-                                                <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
+                                                <input type="text" class="form-control" placeholder="Last Name" value="${LASTNAME}">
                                             </div>
                                         </div>
                                     </div>
@@ -206,7 +211,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Address</label>
-                                                <input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                                                <input type="text" class="form-control" placeholder="Home Address" value="${ADDRESS}">
                                             </div>
                                         </div>
                                     </div>
@@ -215,19 +220,19 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>City</label>
-                                                <input type="text" class="form-control" placeholder="City" value="Mike">
+                                                <input type="text" class="form-control" placeholder="City" value="${CITY}">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Country</label>
-                                                <input type="text" class="form-control" placeholder="Country" value="Andrew">
+                                                <input type="text" class="form-control" placeholder="Country" value="${COUNTRY}">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Postal Code</label>
-                                                <input type="number" class="form-control" placeholder="ZIP Code">
+                                                <input type="number" class="form-control" placeholder="${PORTALCODE}">
                                             </div>
                                         </div>
                                     </div>
@@ -236,7 +241,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>About Me</label>
-                                                <textarea rows="5" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+                                                <textarea rows="5" class="form-control" placeholder="Here can be your description" value="Mike">${ABOUT}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -257,14 +262,12 @@
                                     <a href="#">
                                         <img class="avatar border-gray" src="about-img.png" alt="..."/>
 
-                                        <h4 class="title">Mike Andrew<br />
-                                            <small>michael24</small>
+                                        <h4 class="title">${FIRSTNAME} ${LASTNAME}<br />
+                                            <small>${USERNAME}</small>
                                         </h4>
                                     </a>
                                 </div>
-                                <p class="description text-center"> "Lamborghini Mercy <br>
-                                    Your chick she so thirsty <br>
-                                    I'm in that two seat Lambo"
+                                <p class="description text-center"> "${ABOUT}"
                                 </p>
                             </div>
                             <hr>
