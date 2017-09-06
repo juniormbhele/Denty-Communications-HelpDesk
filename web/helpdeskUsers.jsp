@@ -6,7 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -171,34 +172,26 @@
                                     <th>LAST NAME</th>
                                     <th>Email</th>
                                     <th>COMPANY</th>
-                                    <th>ADDRESS</th>
                                     <th>CITY</th>
                                     <th>COUNTRY</th>
-                                    <th>PORTAL CODE</th>
-                                    <th>ABOUT</th>
                                     <th>ROLE</th>
-                                    <th>REGISTRATION DATE</th>
                                     </thead>
                                     <tbody>
                                     <c:forEach var="users" items="${usersList}">
                                         <tr>
-                                            <td>${users[0]}</td>
-                                            <td>${users[1]}</td>
-                                            <td>${users[2]}</td>
-                                            <td>${users[3]}</td>
-                                            <td>${users[4]}</td>
-                                            <td>${users[5]}</td>
-                                            <td>${users[6]}</td>
-                                            <td>${users[7]}</td>
-                                            <td>${users[8]}</td>
-                                            <td>${users[9]}</td>
-                                            <td>${users[10]}</td>
-                                            <td>${users[11]}</td>
+                                            <td>${users.username}</td>
+                                            <td>${users.firstName}</td>
+                                            <td>${users.lastName}</td>
+                                            <td>${users.email}</td>
+                                            <td>${users.company}</td>
+                                            <td>${users.city}</td>
+                                            <td>${users.country}</td>
+                                            <td>${users.role}</td>
                                             <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" title="Edit User" class="btn btn-info btn-simple btn-xs">
+                                                <button type="button" rel="tooltip" title="Edit ${users.firstName}" class="btn btn-info btn-simple btn-xs">
                                                     <i class="fa fa-edit"></i>
                                                 </button>
-                                                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                                <button type="button" rel="tooltip" title="Remove ${users.firstName}" class="btn btn-danger btn-simple btn-xs">
                                                     <i class="fa fa-times"></i>
                                                 </button>
                                             </td>
@@ -207,7 +200,8 @@
 
                                     </tbody>
                                 </table>
-
+                                <button type="submit" class="btn btn-info btn-fill pull-right">Add User</button>
+                                <div class="clearfix"></div>
                             </div>
                         </div>
                     </div>

@@ -18,36 +18,30 @@ public class displayUsers extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException
+    {
 
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-
-        List<UserDto> users = null;
         try {
-            users = addUsers(request,response);
+            addUsers(request,response);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        request.setAttribute("usersList", users);
-        request.getRequestDispatcher("/helpdeskUsers.jsp").forward(request, response);
-
 
     }
 
 
 
-    public List<UserDto> addUsers(HttpServletRequest request, HttpServletResponse response) throws ClassNotFoundException, SQLException
-    {
+    public void addUsers(HttpServletRequest request, HttpServletResponse response)
+            throws ClassNotFoundException, SQLException, ServletException, IOException {
         List<UserDto> users = new ArrayList<UserDto>();
 
         Connection con = Database.getConnection();
         PreparedStatement ps = con.prepareStatement("SELECT * FROM SYSTEM.USERS");
         ResultSet rs = ps.executeQuery();
-        rs.beforeFirst();
+
         while(rs.next())
         {
             UserDto user = new UserDto();
@@ -62,13 +56,24 @@ public class displayUsers extends HttpServlet {
             user.setCountry(rs.getString("COUNTRY"));
             user.setPortalCode(rs.getString("PORTALCODE"));
             user.setAbout(rs.getString("ABOUT"));
-            user.setRole(rs.getString("ROLE"));
+            user.setPassword(rs.getString("PASSWORD"));
             user.setReg_date(rs.getString("REG_DATE"));
+            user.setRole(rs.getString("ROLE"));
 
             users.add(user);
 
         }
-        return users;
+
+        for (int i =0;i<2;i++)
+        {
+            System.out.println(users.get(i).getAbout());
+        }
+
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+
+        request.setAttribute("usersList", users);
+        request.getRequestDispatcher("/helpdeskUsers.jsp").forward(request, response);
 
     }
 
