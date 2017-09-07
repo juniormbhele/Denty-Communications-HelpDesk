@@ -40,7 +40,7 @@
 
     <servlet>
         <servlet-name>tickets</servlet-name>
-        <servlet-class>com.helpdesk.tickets</servlet-class>
+        <servlet-class>com.helpdesk.TicketReplyDisplay</servlet-class>
     </servlet>
 
 
@@ -70,6 +70,17 @@
     <servlet-mapping>
         <servlet-name>Users</servlet-name>
         <url-pattern>/Users</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Reply</servlet-name>
+        <servlet-class>com.helpdesk.DisplayReplies</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>Reply</servlet-name>
+        <url-pattern>/Reply</url-pattern>
     </servlet-mapping>
 
 

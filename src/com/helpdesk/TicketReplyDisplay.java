@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,18 +18,31 @@ import java.util.List;
  */
 public class TicketReplyDisplay extends HttpServlet
 {
+
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException
-    {
+            throws ServletException, IOException {
+
+        List<TicketDto> tickets = null;
+        List<Responses> res = null;
+        String ticketId = (String) request.getParameter("tickets.TICKETSID");
+
 
         try {
-            displayTickets(request, response);
+            tickets = displayTickets(request, response);
+            res = DisplayReplies.displayReplies(request, response);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+
+        request.setAttribute("ReplyList", res);
+        request.setAttribute("TicketsList", tickets);
+        request.getRequestDispatcher("/AdminTickets.jsp").forward(request, response);
 
 
     }
@@ -40,7 +54,7 @@ public class TicketReplyDisplay extends HttpServlet
         List<TicketDto> tickets = new ArrayList<TicketDto>();
 
         Connection con = Database.getConnection();
-        PreparedStatement ps = con.prepareStatement("SELECT * FROM SYSTEM.TICKETS");
+        PreparedStatement ps = con.prepareStatement("SELECT * FROM SYSTEM.TICKETS ");
         ResultSet rs = ps.executeQuery();
 
         while(rs.next())

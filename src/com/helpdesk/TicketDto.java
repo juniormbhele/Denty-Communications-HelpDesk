@@ -7,6 +7,13 @@ public class TicketDto
 {
 
     private String TICKETSID;
+    private String USERNAME;
+    private String TICKETSTITLE;
+    private String TICKETSDESCRIPTION;
+    private String POSTEDON;
+    private String STATUS;
+    private String RESOLVEDON;
+    private String ASSIGNEDTO;
 
     public String getTICKETSID() {
         return TICKETSID;
@@ -71,12 +78,4 @@ public class TicketDto
     public void setASSIGNEDTO(String ASSIGNEDTO) {
         this.ASSIGNEDTO = ASSIGNEDTO;
     }
-
-    private String USERNAME;
-    private String TICKETSTITLE;
-    private String TICKETSDESCRIPTION;
-    private String POSTEDON;
-    private String STATUS;
-    private String RESOLVEDON;
-    private String ASSIGNEDTO;
 }
