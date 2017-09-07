@@ -24,13 +24,11 @@ public class TicketReplyDisplay extends HttpServlet
             throws ServletException, IOException {
 
         List<TicketDto> tickets = null;
-        List<Responses> res = null;
-        String ticketId = (String) request.getParameter("tickets.TICKETSID");
+
 
 
         try {
             tickets = displayTickets(request, response);
-            res = DisplayReplies.displayReplies(request, response);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
@@ -40,7 +38,6 @@ public class TicketReplyDisplay extends HttpServlet
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        request.setAttribute("ReplyList", res);
         request.setAttribute("TicketsList", tickets);
         request.getRequestDispatcher("/AdminTickets.jsp").forward(request, response);
 

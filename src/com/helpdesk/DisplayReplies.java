@@ -18,6 +18,8 @@ import java.util.List;
  */
 public class DisplayReplies extends HttpServlet
 {
+    static TicketDto ticket = new TicketDto();
+
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -34,6 +36,19 @@ public class DisplayReplies extends HttpServlet
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
+
+        request.setAttribute("TITLE", ticket.getTICKETSTITLE());
+        request.setAttribute("POSTEDBY", ticket.getUSERNAME());
+        request.setAttribute("POSTEDBY", ticket.getUSERNAME());
+        request.setAttribute("DATE", ticket.getPOSTEDON());
+        request.setAttribute("BODY", ticket.getTICKETSDESCRIPTION());
+        request.setAttribute("status", ticket.getSTATUS());
+
+
+
+
+
+
 
         request.setAttribute("ReplyList", res);
         request.getRequestDispatcher("/TicketReply.jsp").forward(request, response);
@@ -64,6 +79,15 @@ public class DisplayReplies extends HttpServlet
             replies.setTRDESCRIPTION(rs.getString("TRDESCRIPTION"));
             replies.setPOSTEDON(rs.getString("POSTEDON"));
             replies.setPOSTEDBY(rs.getString("POSTEDBY"));
+            ticket.setTICKETSID(rs.getString("TICKETSID"));
+            ticket.setTICKETSDESCRIPTION(rs.getString("TICKETSDESCRIPTION"));
+            ticket.setTICKETSTITLE(rs.getString("TICKETSTITLE"));
+            ticket.setUSERNAME(rs.getString("USERNAME"));
+            ticket.setSTATUS(rs.getString("STATUS"));
+            ticket.setRESOLVEDON(rs.getString("RESOLVEDON"));
+            ticket.setPOSTEDON(rs.getString("POSTEDON"));
+            ticket.setASSIGNEDTO(rs.getString("ASSIGNEDTO"));
+
 
             res.add(replies);
 

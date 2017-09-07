@@ -1,4 +1,6 @@
-package com.helpdesk;
+package customer;
+
+import com.helpdesk.Database;
 
 import java.io.IOException;
 import java.sql.Connection;

@@ -1,4 +1,9 @@
-package com.helpdesk;
+package customer;
+
+/**
+ * Created by Sphiwe.Mbhele on 2017/08/17.
+ */
+import com.helpdesk.Database;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,36 +15,31 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-/**
- * Created by Sphiwe.Mbhele on 2017/09/04.
- */
-public class tickets extends HttpServlet
+public class home extends HttpServlet
 {
+
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-
-        displayIssues(login.username, request,response);
-        request.getRequestDispatcher("/tickets.jsp").forward(request, response);
-
+        String n=request.getParameter("username");
+        out.print("Welcome "+n);
     }
 
     public static void displayIssues(String username, HttpServletRequest request,
-                                     HttpServletResponse response) throws ServletException, IOException {
+            HttpServletResponse response) throws ServletException, IOException {
 
-        String TICKETSTITLE = null;
-        String TICKETSDESCRIPTION = null;
+        String title = null;
+        String description = null;
         String postDate = null;
         String status = null;
         String resolvedDate = null;
         String supportPerson = null;
-        String TICKETSID = null;
-        String ASSIGNEDTO = null;
+        String issuesID = null;
 
 
         String loginID = null;
@@ -48,32 +48,29 @@ public class tickets extends HttpServlet
 
             if (con != null)
             {
-                PreparedStatement ps = con.prepareStatement("SELECT * FROM SYSTEM.USERS C INNER JOIN SYSTEM.TICKETS I on C.USERNAME = I.USERNAME WHERE C.USERNAME=?" );
+                PreparedStatement ps = con.prepareStatement("SELECT * FROM SYSTEM.CUSTOMERS C INNER JOIN SYSTEM.ISSUES I on C.CUSTOMERID = I.CUSTOMERID WHERE C.LOGINNAME=?" );
                 ps.setString(1, username);
                 ResultSet rs = ps.executeQuery();
 
                 if (rs.next())
                 {
-                    TICKETSDESCRIPTION = rs.getString("TICKETSDESCRIPTION");
-                    TICKETSTITLE = rs.getString("TICKETSTITLE");
+                    description = rs.getString("ISSUEDESCRIPTION");
+                    title = rs.getString("ISSUETITLE");
                     postDate = rs.getString("POSTEDON");
                     status = rs.getString("STATUS");
                     resolvedDate = rs.getString("RESOLVEDON");
-                    ASSIGNEDTO = rs.getString("ASSIGNEDTO");
 
 
                     request.setAttribute("userMessage", username);
-                    request.setAttribute("title", TICKETSTITLE);
+                    request.setAttribute("title", title);
                     request.setAttribute("customer", username);
                     request.setAttribute("date", postDate);
-                    request.setAttribute("desc", TICKETSDESCRIPTION);
+                    request.setAttribute("desc", description);
                     request.setAttribute("status", status);
-                    request.setAttribute("ASSIGNEDTO", ASSIGNEDTO);
 
+                    issuesID =rs.getString("ISSUEID");
 
-                    TICKETSID =rs.getString("TICKETSID");
-
-                    displayReplies(TICKETSID, request, response);
+                    home.displayReplies(issuesID, request, response);
 
                 } else
                 {
@@ -97,11 +94,11 @@ public class tickets extends HttpServlet
         }
     }
 
-    public static void displayReplies(String TRID, HttpServletRequest request,
-                                      HttpServletResponse response) throws ServletException, IOException {
+    public static void displayReplies(String issuesID, HttpServletRequest request,
+                                     HttpServletResponse response) throws ServletException, IOException {
 
-        String TRTITLE = null;
-        String TRDESCRIPTION = null;
+        String IRTITLE = null;
+        String IRDESCRIPTION = null;
         String POSTEDON = null;
         String POSTEDBY = null;
         try {
@@ -109,20 +106,20 @@ public class tickets extends HttpServlet
 
             if (con != null)
             {
-                PreparedStatement ps = con.prepareStatement("SELECT * FROM SYSTEM.TICKETSRESPONSES WHERE TRID LIKE ?" );
-                ps.setString(1, TRID);
+                PreparedStatement ps = con.prepareStatement("SELECT * FROM SYSTEM.ISSUERESPONSES WHERE ISSUEID LIKE ?" );
+                ps.setString(1, issuesID);
                 ResultSet rs = ps.executeQuery();
 
                 if (rs.next())
                 {
-                    TRTITLE = rs.getString("TRTITLE");
-                    TRDESCRIPTION = rs.getString("TRDESCRIPTION");
+                    IRTITLE = rs.getString("IRTITLE");
+                    IRDESCRIPTION = rs.getString("IRDESCRIPTION");
                     POSTEDON = rs.getString("POSTEDON");
                     POSTEDBY = rs.getString("POSTEDBY");
 
 
-                    request.setAttribute("Replytitle", TRTITLE);
-                    request.setAttribute("Replydesc", TRDESCRIPTION);
+                    request.setAttribute("Replytitle", IRTITLE);
+                    request.setAttribute("Replydesc", IRDESCRIPTION);
                     request.setAttribute("Rplydate", POSTEDON);
                     request.setAttribute("PostedBy", POSTEDBY);
 

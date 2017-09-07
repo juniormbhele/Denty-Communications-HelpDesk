@@ -180,7 +180,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label>From:${Reply}</label>
+                                                <label>From:${POSTEDBY}</label>
 
                                             </div>
                                         </div>
