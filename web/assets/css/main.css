@@ -1826,7 +1826,7 @@
 
 		a:hover {
 			border-bottom-color: transparent !important;
-			color: #6bd4c8;
+			color: #888888;
 		}
 
 	strong, b {
@@ -2053,7 +2053,7 @@
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #6bd4c8;
+			border-color: #8B0000;
 		}
 
 	.select-wrapper {
@@ -3046,7 +3046,7 @@
 			#footer .button.special {
 				background-color: #ffffff;
 				box-shadow: inset 0 0 0 1px #ffffff !important;
-				color: #4686a0 !important;
+				color: #8B0000 !important;
 			}
 
 				#footer input[type="submit"].special:hover,

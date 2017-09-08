@@ -6,23 +6,23 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <link rel="icon" type="image/png" href="about-img.png">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
     <title>HD - Tickets</title>
 
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+    <meta name="viewport" content="width=device-width"/>
 
 
     <!-- Bootstrap core CSS     -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- Animation library for notifications   -->
     <link href="assets/css/animate.min.css" rel="stylesheet"/>
@@ -32,13 +32,13 @@
 
 
     <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="assets/css/demo.css" rel="stylesheet" />
+    <link href="assets/css/demo.css" rel="stylesheet"/>
 
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -62,24 +62,28 @@
                 <li>
                     <a href="dashboard.jsp">
                         <i class="pe-7s-graph"></i>
+
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
                     <a href="${pageContext.request.contextPath}/Users">
                         <i class="pe-7s-user"></i>
+
                         <p>User Profile</p>
                     </a>
                 </li>
-                <li >
+                <li>
                     <a href="${pageContext.request.contextPath}/displayUsers">
                         <i class="pe-7s-note2"></i>
+
                         <p>Users</p>
                     </a>
                 </li>
                 <li class="active">
-                    <a href="${pageContext.request.contextPath}/tickets" >
+                    <a href="${pageContext.request.contextPath}/tickets">
                         <i class="fa fa-ticket"></i>
+
                         <p>Tickets</p>
                     </a>
                 </li>
@@ -87,6 +91,7 @@
                 <li>
                     <a href="helpdeskMap.jsp">
                         <i class="pe-7s-map-marker"></i>
+
                         <p>Maps</p>
                     </a>
                 </li>
@@ -100,7 +105,8 @@
         <nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#navigation-example-2">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -113,6 +119,7 @@
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-dashboard"></i>
+
                                 <p class="hidden-lg hidden-md">Dashboard</p>
                             </a>
                         </li>
@@ -121,6 +128,7 @@
                                 <i class="fa fa-globe"></i>
                                 <b class="caret hidden-sm hidden-xs"></b>
                                 <span class="notification hidden-sm hidden-xs">5</span>
+
                                 <p class="hidden-lg hidden-md">
                                     5 Notifications
                                     <b class="caret"></b>
@@ -137,6 +145,7 @@
                         <li>
                             <a href="">
                                 <i class="fa fa-search"></i>
+
                                 <p class="hidden-lg hidden-md">Search</p>
                             </a>
                         </li>
@@ -170,6 +179,7 @@
                         <div class="card card-plain">
                             <div class="header">
                                 <h4 class="title">Tickets</h4>
+
                                 <p class="category">Here are all the tickets logged this year </p>
                             </div>
                             <div class="content table-responsive table-full-width">
@@ -187,26 +197,29 @@
                                     <tbody>
                                     <c:forEach var="tickets" items="${TicketsList}">
                                         <tr>
-                                            <td id="id"><a href="${pageContext.request.contextPath}/Reply">${tickets.TICKETSID}</td>
+
+                                            <td id="id">
+                                                    ${tickets.TICKETSID}
+                                            </td>
                                             <td>${tickets.TICKETSTITLE}</td>
                                             <td>${tickets.TICKETSDESCRIPTION}</td>
                                             <td>${tickets.POSTEDON}</td>
                                             <td>${tickets.STATUS}</td>
                                             <td>${tickets.RESOLVEDON}</td>
                                             <td>${tickets.ASSIGNEDTO}</td>
-                                            <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" title="Reply to ${tickets.TICKETSID}" class="btn btn-info btn-simple btn-xs">
-                                                    <i class="fa fa-reply"></i>
-                                                </button>
-                                                <button type="button" rel="tooltip" title="Close ${tickets.TICKETSID}" class="btn btn-danger btn-simple btn-xs">
-                                                    <i class="fa fa-times"></i>
-                                                </button>
+                                            <td>
+                                                <a href="${pageContext.request.contextPath}/Reply?id=${tickets.TICKETSID}"/>
+                                                <i class="fa fa-reply" title="Reply"></i>
+                                            </td>
+                                            <td>
+                                                <a href="${pageContext.request.contextPath}/Reply?id=${tickets.TICKETSID}"/>
+                                                <i class="fa fa-close" title="Close"></i>
                                             </td>
                                         </tr>
                                     </c:forEach>
                                     </tbody>
                                 </table>
-
+                                <button type="submit" class="btn btn-info btn-fill pull-right">Add</button>
                             </div>
                         </div>
                     </div>
@@ -222,7 +235,9 @@
             <div class="container-fluid">
 
                 <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.DentyCommunications.co.za">Denty Communications</a>, a div of. of Denty Group
+                    &copy;
+                    <script>document.write(new Date().getFullYear())</script>
+                    <a href="http://www.DentyCommunications.co.za">Denty Communications</a>, a div of. of Denty Group
                 </p>
             </div>
         </footer>

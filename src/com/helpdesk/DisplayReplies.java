@@ -13,9 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Sphiwe.Mbhele on 2017/09/07.
- */
+
 public class DisplayReplies extends HttpServlet
 {
     static TicketDto ticket = new TicketDto();
@@ -36,12 +34,11 @@ public class DisplayReplies extends HttpServlet
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-
-        request.setAttribute("TITLE", ticket.getTICKETSTITLE());
+        request.setAttribute("TicketNo", ticket.getTICKETSID());
+        request.setAttribute("Title", ticket.getTICKETSTITLE());
         request.setAttribute("POSTEDBY", ticket.getUSERNAME());
-        request.setAttribute("POSTEDBY", ticket.getUSERNAME());
-        request.setAttribute("DATE", ticket.getPOSTEDON());
-        request.setAttribute("BODY", ticket.getTICKETSDESCRIPTION());
+        request.setAttribute("date", ticket.getPOSTEDON());
+        request.setAttribute("body", ticket.getTICKETSDESCRIPTION());
         request.setAttribute("status", ticket.getSTATUS());
 
 

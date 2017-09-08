@@ -33,6 +33,8 @@ public class TicketReplyDisplay extends HttpServlet
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (Exception ex){
+            ex.printStackTrace();
         }
 
         response.setContentType("text/html");

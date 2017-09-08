@@ -93,7 +93,6 @@
         <servlet-name>TicketReplyDisplay</servlet-name>
         <url-pattern>/TicketReplyDisplay</url-pattern>
     </servlet-mapping>
-    TicketReplyDisplay
 
 
     <welcome-file-list>

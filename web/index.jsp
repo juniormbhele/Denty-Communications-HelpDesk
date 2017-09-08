@@ -31,13 +31,6 @@
     <div class="header-limiter">
 
         <h1><a href="index.jsp">Denty Group<span>: Helpdesk</span></a></h1>
-
-        <nav>
-            <a href="index.jsp" class="selected">Home</a>
-            <a href="#" >Tickets</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
-        </nav>
     </div>
 
 </header>

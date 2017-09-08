@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -63,7 +65,7 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="${pageContext.request.contextPath}/Users">
                         <i class="pe-7s-user"></i>
                         <p>User Profile</p>
@@ -167,7 +169,7 @@
                     <div class="col-md-8">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Ticket No:</h4>
+                                <h4 class="title">Ticket No:${TicketNo}</h4>
                             </div>
                             <div class="content">
                                 <form>
@@ -204,22 +206,22 @@
                                     </div>
                                     <h2 class="templatemo-inline-block"></h2><hr>
                                     <div class="row">
-                                        <div class="col-md-4">
+
                                             <div class="form-group">
 
                                                 <table class="table table-hover">
                                                     <thead>
                                                     <th>Reply</th>
                                                     <th>POSTED DATE</th>
-                                                    <th>ASSIGNED TO</th>
+                                                    <th>POSTED BY</th>
 
                                                     </thead>
                                                     <tbody>
                                                     <c:forEach var="replies" items="${ReplyList}">
                                                         <tr>
-                                                            <td>${replies.TICKETSDESCRIPTION}</td>
-                                                            <td>${replies.TICKETSTITLE}</td>
-                                                            <td>${replies.TICKETSDESCRIPTION}</td>
+                                                            <td>${replies.TRDESCRIPTION}</td>
+                                                            <td>${replies.POSTEDON}</td>
+                                                            <td>${replies.POSTEDBY}</td>
                                                         </tr>
 
                                                     </c:forEach>
@@ -228,7 +230,7 @@
 
 
                                             </div>
-                                        </div>
+
 
                                     </div>
                                     <h2 class="templatemo-inline-block"></h2><hr>
@@ -236,12 +238,11 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Your Reply</label>
-                                                <textarea rows="5" class="form-control" placeholder="Here can be your description" value="Mike">${Reply}</textarea>
+                                                <textarea rows="5" class="form-control" placeholder="Here can be your reply" value="Mike">${Reply}</textarea>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <button type="submit" class="btn btn-primary btn-danger pull-right"><span class="fa fa-reply" aria-hidden="true"></span>Reply</button>
+                                    <button type="submit" class="btn btn-info btn-fill pull-right"><span class="fa fa-reply" aria-hidden="true"></span>Reply</button>
                                     <div class="clearfix"></div>
                                 </form>
                             </div>
