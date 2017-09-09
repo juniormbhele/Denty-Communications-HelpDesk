@@ -39,7 +39,7 @@ public class displayUsers extends HttpServlet {
         List<UserDto> users = new ArrayList<UserDto>();
 
         Connection con = Database.getConnection();
-        PreparedStatement ps = con.prepareStatement("SELECT * FROM SYSTEM.USERS");
+        PreparedStatement ps = con.prepareStatement("SELECT * FROM SYSTEM.USERS ORDER BY USERNAME");
         ResultSet rs = ps.executeQuery();
 
         while(rs.next())

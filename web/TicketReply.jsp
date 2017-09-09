@@ -169,14 +169,14 @@
                     <div class="col-md-8">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Ticket No:${TicketNo}</h4>
+                                <h4 id="TicketNo" class="title">Ticket No:${TicketNo}</h4>
                             </div>
                             <div class="content">
                                 <form>
                                     <div class="row">
                                         <div class="col-md-5">
                                             <div class="form-group">
-                                                <label>${Title}</label>
+                                                <label id="title">${Title}</label>
 
                                             </div>
                                         </div>
@@ -238,11 +238,15 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Your Reply</label>
-                                                <textarea rows="5" class="form-control" placeholder="Here can be your reply" value="Mike">${Reply}</textarea>
+                                                <textarea name="reply" rows="5" class="form-control" placeholder="Here can be your reply" value="Mike"></textarea>
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-info btn-fill pull-right"><span class="fa fa-reply" aria-hidden="true"></span>Reply</button>
+                                    <label class="pull-left">${replyStatus}</label>
+                                    <form action="${pageContext.request.contextPath}/TicketsReply?id=${TicketNo}">
+                                        <button name="BtnReply" type="submit" class="btn btn-info btn-fill pull-right"><span class="fa fa-reply" aria-hidden="true"></span>Reply</button>
+                                    </form>
+
                                     <div class="clearfix"></div>
                                 </form>
                             </div>

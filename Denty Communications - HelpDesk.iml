@@ -21,6 +21,7 @@
         </descriptors>
         <webroots>
           <root url="file://$MODULE_DIR$/web/assets/fonts" relative="/WEB-INF" />
+          <root url="file://$MODULE_DIR$/out/artifacts" relative="/" />
         </webroots>
       </configuration>
     </facet>

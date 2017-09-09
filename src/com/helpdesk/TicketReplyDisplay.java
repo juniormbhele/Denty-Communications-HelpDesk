@@ -53,7 +53,7 @@ public class TicketReplyDisplay extends HttpServlet
         List<TicketDto> tickets = new ArrayList<TicketDto>();
 
         Connection con = Database.getConnection();
-        PreparedStatement ps = con.prepareStatement("SELECT * FROM SYSTEM.TICKETS ");
+        PreparedStatement ps = con.prepareStatement("SELECT * FROM SYSTEM.TICKETS ORDER BY TICKETSID");
         ResultSet rs = ps.executeQuery();
 
         while(rs.next())

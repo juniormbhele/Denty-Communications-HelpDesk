@@ -200,7 +200,10 @@
 
                                     </tbody>
                                 </table>
-                                <button type="submit" class="btn btn-info btn-fill pull-right">Add User</button>
+                                <form action="AddUser.jsp">
+                                    <button type="submit" class="btn btn-info btn-fill pull-right">Add User</button>
+                                </form>
+
                                 <div class="clearfix"></div>
                             </div>
                         </div>

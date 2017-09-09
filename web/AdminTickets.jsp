@@ -219,7 +219,7 @@
                                     </c:forEach>
                                     </tbody>
                                 </table>
-                                <button type="submit" class="btn btn-info btn-fill pull-right">Add</button>
+
                             </div>
                         </div>
                     </div>

@@ -76,7 +76,7 @@
                     </a>
                 </li>
                 <li >
-                    <a href="${pageContext.request.contextPath}/TicketReplyDisplay" method="post" >
+                    <a href="${pageContext.request.contextPath}/TicketReplyDisplay" >
                         <i class="fa fa-ticket"></i>
                         <p>Tickets</p>
                     </a>

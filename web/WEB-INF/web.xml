@@ -94,6 +94,27 @@
         <url-pattern>/TicketReplyDisplay</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>TicketsReply</servlet-name>
+        <servlet-class>com.helpdesk.AddingReplies</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>TicketsReply</servlet-name>
+        <url-pattern>/TicketsReply</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddUser</servlet-name>
+        <servlet-class>com.helpdesk.AddUser</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>AddUser</servlet-name>
+        <url-pattern>/AddUser</url-pattern>
+    </servlet-mapping>
+
 
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
