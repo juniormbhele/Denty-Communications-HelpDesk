@@ -102,9 +102,11 @@
   
   
   <!-- Project Libraries -->
-  
-  
-  <!-- Global Libraries -->
+
+    <path id="library.ojdbc14-10.2.0.2.classpath"/>
+
+
+    <!-- Global Libraries -->
   
   <path id="library.jquery-1.11.0.classpath">
     <pathelement location="C:/Users/sphiwe.mbhele/.IntelliJIdea14/system/extLibs/http_code.jquery.com_jquery-1.11.0.js"/>

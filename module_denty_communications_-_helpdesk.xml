@@ -26,6 +26,7 @@
     <pathelement location="${basedir}/../../../../Selenium/jars/ojdbc7-12.1.0.2.jar"/>
     <pathelement location="${basedir}/.idea/libraries/ojdbc14.jar"/>
     <path refid="library.yui.classpath"/>
+      <path refid="library.ojdbc14-10.2.0.2.classpath"/>
   </path>
   
   <path id="denty_communications_-_helpdesk.runtime.production.module.classpath">
@@ -38,6 +39,7 @@
     <pathelement location="${basedir}/../../../../Selenium/jars/ojdbc7-12.1.0.2.jar"/>
     <pathelement location="${basedir}/.idea/libraries/ojdbc14.jar"/>
     <path refid="library.yui.classpath"/>
+      <path refid="library.ojdbc14-10.2.0.2.classpath"/>
   </path>
   
   <path id="denty_communications_-_helpdesk.module.classpath">
@@ -52,6 +54,7 @@
     <pathelement location="${basedir}/../../../../Selenium/jars/ojdbc7-12.1.0.2.jar"/>
     <pathelement location="${basedir}/.idea/libraries/ojdbc14.jar"/>
     <path refid="library.yui.classpath"/>
+      <path refid="library.ojdbc14-10.2.0.2.classpath"/>
   </path>
   
   <path id="denty_communications_-_helpdesk.runtime.module.classpath">
@@ -66,6 +69,7 @@
     <pathelement location="${basedir}/../../../../Selenium/jars/ojdbc7-12.1.0.2.jar"/>
     <pathelement location="${basedir}/.idea/libraries/ojdbc14.jar"/>
     <path refid="library.yui.classpath"/>
+      <path refid="library.ojdbc14-10.2.0.2.classpath"/>
   </path>
   
   
@@ -75,15 +79,26 @@
     <exclude name="out/artifacts/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/JS/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/JS/bootstrap/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/ti/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/ti/js/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/ti/css/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/ti/fonts/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/CSS/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/CSS/layouts/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/CSS/fancybox/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/img/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/fonts/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/js/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/js/ie/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/css/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/css/images/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/img/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/img/faces/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/sass/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/sass/lbd/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/sass/lbd/mixins/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/sass/libs/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/fonts/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/**"/>
@@ -94,50 +109,145 @@
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/CSS/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/CSS/layouts/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/js/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/assets/css/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/WEB-INF/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/production/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/production/Denty Communications - HelpDesk/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/production/Denty Communications - HelpDesk/web/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/production/Denty Communications - HelpDesk/web/WEB-INF/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/CSS/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/CSS/layouts/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/js/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/css/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/WEB-INF/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/production/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/production/Denty Communications - HelpDesk/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/production/Denty Communications - HelpDesk/web/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/production/Denty Communications - HelpDesk/web/CSS/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/production/Denty Communications - HelpDesk/web/CSS/layouts/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/production/Denty Communications - HelpDesk/web/assets/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/production/Denty Communications - HelpDesk/web/assets/js/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/production/Denty Communications - HelpDesk/web/assets/css/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/out/production/Denty Communications - HelpDesk/web/WEB-INF/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/JS/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/JS/bootstrap/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/ti/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/ti/js/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/ti/css/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/ti/fonts/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/CSS/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/CSS/layouts/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/CSS/fancybox/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/img/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/fonts/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/js/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/js/ie/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/css/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/css/images/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/img/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/img/faces/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/sass/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/sass/lbd/**"/>
+      <exclude
+              name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/sass/lbd/mixins/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/sass/libs/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/assets/fonts/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/web/WEB-INF/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/test/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/.idea/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/.idea/scopes/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/.idea/artifacts/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/.idea/copyright/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/.idea/libraries/**"/>
     <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/.idea/dictionaries/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/customer/**"/>
+      <exclude name="out/artifacts/Denty_Communications___HelpDesk_war_exploded/WEB-INF/classes/Resources/**"/>
     <exclude name="out/production/**"/>
     <exclude name="out/production/Denty Communications - HelpDesk/**"/>
     <exclude name="out/production/Denty Communications - HelpDesk/com/**"/>
     <exclude name="out/production/Denty Communications - HelpDesk/com/helpdesk/**"/>
     <exclude name="out/production/Denty Communications - HelpDesk/web/**"/>
-    <exclude name="out/production/Denty Communications - HelpDesk/web/JS/**"/>
-    <exclude name="out/production/Denty Communications - HelpDesk/web/CSS/**"/>
-    <exclude name="out/production/Denty Communications - HelpDesk/web/CSS/layouts/**"/>
+      <exclude name="out/production/Denty Communications - HelpDesk/web/js/**"/>
+      <exclude name="out/production/Denty Communications - HelpDesk/web/js/bootstrap/**"/>
+      <exclude name="out/production/Denty Communications - HelpDesk/web/ti/**"/>
+      <exclude name="out/production/Denty Communications - HelpDesk/web/ti/js/**"/>
+      <exclude name="out/production/Denty Communications - HelpDesk/web/ti/css/**"/>
+      <exclude name="out/production/Denty Communications - HelpDesk/web/ti/fonts/**"/>
+      <exclude name="out/production/Denty Communications - HelpDesk/web/css/**"/>
+      <exclude name="out/production/Denty Communications - HelpDesk/web/img/**"/>
+      <exclude name="out/production/Denty Communications - HelpDesk/web/fonts/**"/>
     <exclude name="out/production/Denty Communications - HelpDesk/web/assets/**"/>
     <exclude name="out/production/Denty Communications - HelpDesk/web/assets/js/**"/>
     <exclude name="out/production/Denty Communications - HelpDesk/web/assets/js/ie/**"/>
     <exclude name="out/production/Denty Communications - HelpDesk/web/assets/css/**"/>
     <exclude name="out/production/Denty Communications - HelpDesk/web/assets/css/images/**"/>
+      <exclude name="out/production/Denty Communications - HelpDesk/web/assets/img/**"/>
+      <exclude name="out/production/Denty Communications - HelpDesk/web/assets/img/faces/**"/>
     <exclude name="out/production/Denty Communications - HelpDesk/web/assets/sass/**"/>
+      <exclude name="out/production/Denty Communications - HelpDesk/web/assets/sass/lbd/**"/>
+      <exclude name="out/production/Denty Communications - HelpDesk/web/assets/sass/lbd/mixins/**"/>
     <exclude name="out/production/Denty Communications - HelpDesk/web/assets/sass/libs/**"/>
     <exclude name="out/production/Denty Communications - HelpDesk/web/assets/fonts/**"/>
     <exclude name="out/production/Denty Communications - HelpDesk/web/WEB-INF/**"/>
+      <exclude name="out/production/Denty Communications - HelpDesk/test/**"/>
     <exclude name="out/production/Denty Communications - HelpDesk/.idea/**"/>
     <exclude name="out/production/Denty Communications - HelpDesk/.idea/scopes/**"/>
     <exclude name="out/production/Denty Communications - HelpDesk/.idea/artifacts/**"/>
     <exclude name="out/production/Denty Communications - HelpDesk/.idea/copyright/**"/>
     <exclude name="out/production/Denty Communications - HelpDesk/.idea/libraries/**"/>
     <exclude name="out/production/Denty Communications - HelpDesk/.idea/dictionaries/**"/>
+      <exclude name="out/production/Denty Communications - HelpDesk/customer/**"/>
+      <exclude name="out/production/Denty Communications - HelpDesk/Resources/**"/>
   </patternset>
   
   <patternset id="excluded.from.compilation.denty_communications_-_helpdesk">
