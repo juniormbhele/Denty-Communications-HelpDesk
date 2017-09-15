@@ -168,15 +168,18 @@
                 <div class="row">
                     <div class="col-md-8">
                         <div class="card">
+                            <form action="${pageContext.request.contextPath}/TicketsReply" method="post">
                             <div class="header">
-                                <h4 id="TicketNo" class="title">Ticket No:${TicketNo}</h4>
+                                <h4 class="title">Ticket No:${TicketNo}</h4>
+                                <input type="hidden" name="TicketNo" value="${TicketNo}"/>
                             </div>
                             <div class="content">
-                                <form>
+
                                     <div class="row">
                                         <div class="col-md-5">
                                             <div class="form-group">
-                                                <label id="title">${Title}</label>
+                                                <label>${Title}</label>
+                                                <input type="hidden" name="title" value="${Title}"/>
 
                                             </div>
                                         </div>
@@ -238,14 +241,14 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Your Reply</label>
-                                                <textarea name="reply" rows="5" class="form-control" placeholder="Here can be your reply" value="Mike"></textarea>
+                                                <textarea name="reply" rows="5" class="form-control"
+                                                          placeholder="Here can be your reply"
+                                                          required="true">${reply}</textarea>
                                             </div>
                                         </div>
                                     </div>
                                     <label class="pull-left">${replyStatus}</label>
-                                    <form action="${pageContext.request.contextPath}/TicketsReply?id=${TicketNo}">
                                         <button name="BtnReply" type="submit" class="btn btn-info btn-fill pull-right"><span class="fa fa-reply" aria-hidden="true"></span>Reply</button>
-                                    </form>
 
                                     <div class="clearfix"></div>
                                 </form>

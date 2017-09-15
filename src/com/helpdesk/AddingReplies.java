@@ -11,14 +11,15 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Random;
 
 /**
  * Created by Sphiwe.Mbhele on 2017/09/09.
  */
 public class AddingReplies extends HttpServlet
 {
-
-    UserDto user = new UserDto();
+    static TicketDto ticket = new TicketDto();
+    Responses res = new Responses();
     private String status;
 
 
@@ -29,28 +30,18 @@ public class AddingReplies extends HttpServlet
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-        setTime();
 
 
+        res.setTICKETSID(request.getParameter("TicketNo"));
+        res.setTRTITLE("RE:" + request.getParameter("title"));
+        res.setPOSTEDBY(login.username);
+        res.setTRDESCRIPTION(request.getParameter("reply"));
 
-        user.setUsername((String) request.getParameter("username"));
-        user.setPassword((String) request.getParameter("password"));
-        user.setCompany((String) request.getParameter("company"));
-        user.setFirstName((String) request.getParameter("firstName"));
-        user.setLastName((String) request.getParameter("lastName"));
-        user.setEmail((String) request.getParameter("email"));
-        user.setAddress((String) request.getParameter("address"));
-        user.setCity((String) request.getParameter("city"));
-        user.setCountry((String) request.getParameter("country"));
-        user.setPortalCode((String) request.getParameter("postalCode"));
-        user.setAbout((String) request.getParameter("about"));
-        user.setRole((String) request.getParameter("role"));
-        user.setReg_date(timeStamp);
 
 
         try
         {
-            addUser(request, response);
+            addReply(request, response);
         } catch (SQLException e)
         {
             e.printStackTrace();
@@ -59,43 +50,38 @@ public class AddingReplies extends HttpServlet
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        request.setAttribute("status", status);
+        request.setAttribute("replyStatus", status);
 
-        request.getRequestDispatcher("/TicketReply.jsp").forward(request, response);
+        DisplayReplies.display(request, response);
 
 
     }
 
-    public void addUser(HttpServletRequest request, HttpServletResponse response) throws SQLException
+    public void addReply(HttpServletRequest request, HttpServletResponse response) throws SQLException, NumberFormatException
     {
+        Random ran = new Random();
+        int trid = ran.nextInt(25) + 5;
+
 
         try
         {
             Connection con = Database.getConnection();
-            PreparedStatement ps = con.prepareStatement("INSERT INTO SYSTEM.USERS (USERNAME, FIRSTNAME, LASTNAME, EMAIL, COMPANY, ADDRESS, CITY, COUNTRY, PORTALCODE, ABOUT, PASSWORD, REG_DATE, ROLE) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
-            ps.setString(1, user.getUsername());
-            ps.setString(2, user.getFirstName());
-            ps.setString(3, user.getLastName());
-            ps.setString(4, user.getEmail());
-            ps.setString(5, user.getCompany());
-            ps.setString(6, user.getAddress());
-            ps.setString(7, user.getCity());
-            ps.setString(8, user.getCountry());
-            ps.setString(9, user.getPortalCode());
-            ps.setString(10, user.getAbout());
-            ps.setString(11, user.getPassword());
-            ps.setString(12, user.getReg_date());
-            ps.setString(13, user.getRole());
+            PreparedStatement ps = con.prepareStatement("INSERT INTO SYSTEM.TICKETSRESPONSES(TRID,TICKETSID,TRTITLE,TRDESCRIPTION, POSTEDBY) VALUES(?,?,?,?,?)");
+            ps.setInt(1, trid);
+            ps.setString(2, res.getTICKETSID());
+            ps.setString(3, res.getTRTITLE());
+            ps.setString(4, res.getTRDESCRIPTION());
+            ps.setString(5, res.getPOSTEDBY());
             ps.executeUpdate();
             ps.close();
             con.close();
-            status = "User Added successfully";
+            status = "Reply Added successfully";
 
 
         }
         catch (SQLException ex)
         {
-            status = "Error while adding a user";
+            status = "Error while adding a Reply";
             ex.printStackTrace();
         }
 
@@ -105,7 +91,7 @@ public class AddingReplies extends HttpServlet
     public void setTime()
     {
 
-        timeStamp = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
+        timeStamp = new SimpleDateFormat().format(Calendar.getInstance().getTime());
 
     }
 

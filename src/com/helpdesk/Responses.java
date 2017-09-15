@@ -5,20 +5,14 @@ package com.helpdesk;
  */
 public class Responses
 {
-    private String TRID;
+
     private String  TICKETSID;
     private String TRTITLE;
     private String TRDESCRIPTION;
     private String POSTEDON;
     private String POSTEDBY;
 
-    public String getTRID() {
-        return TRID;
-    }
 
-    public void setTRID(String TRID) {
-        this.TRID = TRID;
-    }
 
     public String getTICKETSID() {
         return TICKETSID;
